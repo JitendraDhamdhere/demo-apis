@@ -33,7 +33,7 @@ public class DemoServiceImpl implements DemoService {
 		}
 
 		String email = firstName + "." + lastName + "@" + DOMAIN;
-		log.info("In Service - completed");
+		log.info("In Service - completed mail created : " + email);
 
 		return email;
 	}
