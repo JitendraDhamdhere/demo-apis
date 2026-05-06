@@ -1,4 +1,4 @@
-package com.artcode.demo.dto;
+package com.artcode.demo.api.dto;
 
 import lombok.Data;
 
