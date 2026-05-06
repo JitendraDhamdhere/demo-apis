@@ -18,7 +18,7 @@ public class DemoController {
 
 	@GetMapping("/getMail")
 	public String getMethodName(@ParameterObject RequestDto requestDto) {
-		log.info("Request received for email with parameters: " + requestDto);
+		log.info("Request received for email with parameters test: " + requestDto);
 		return demoService.getEmail(requestDto);
 	}
 
