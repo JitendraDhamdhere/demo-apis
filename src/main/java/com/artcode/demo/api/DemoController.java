@@ -1,24 +1,24 @@
 package com.artcode.demo.api;
 
-import org.springdoc.core.annotations.ParameterObject;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.artcode.demo.api.dto.RequestDto;
 
+import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 
 @RestController
 @Slf4j
+@RequiredArgsConstructor
 public class DemoController {
 
-	@Autowired
-	private DemoService demoService;
+	private final DemoService demoService;
 
 	@GetMapping("/getMail")
-	public String getMethodName(@ParameterObject RequestDto requestDto) {
-		log.info("Request received for email with parameters test: " + requestDto);
+	public String getMethodName(@ModelAttribute RequestDto requestDto) {
+		log.info("Request received for email generation: {}", requestDto);
 		return demoService.getEmail(requestDto);
 	}
 
